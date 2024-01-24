@@ -7,7 +7,13 @@
 #include "model/Coccus.h"
 #include "model/Spirillum.h"
 void Simulator::runSimulation() {
-
+  int simulatedRounds = 100;
+  //TODO ask the user for this number
+  while(simulatedRounds--) {
+    destroyDeadBacteria();
+    handleSurvivors();
+    logger.logResult(petriDish);
+  }
 }
 void Simulator::setupSimulation() {
   for(int i = 0; i < dishSize; i++) {
@@ -51,4 +57,26 @@ std::vector<Cell*> Simulator::getEmptyCells() {
     }
   }
   return emptyCells;
+}
+void Simulator::destroyDeadBacteria() {
+  for(int i = 0; i < dishSize; i++) {
+    for(int j = 0; j < dishSize; j++) {
+      Cell* cell = petriDish.at(i).at(j);
+      if(!cell->isEmpty) {
+        if(!cell->getBacterium()->checkSurvival(petriDish)) {
+          cell->removeBacterium();
+        }
+      }
+    }
+  }
+}
+void Simulator::handleSurvivors() {
+  for(int i = 0; i < dishSize; i++) {
+    for(int j = 0; j < dishSize; j++) {
+      Cell* cell = petriDish.at(i).at(j);
+      if(!cell->isEmpty) {
+
+      }
+    }
+  }
 }

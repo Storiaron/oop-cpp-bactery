@@ -6,6 +6,7 @@
 #define OOP_CPP_BACTERY_MODEL_BACTERIUM_H_
 
 #include <vector>
+#include <string>
 #include "Cell.h"
 class Bacterium {
  public:

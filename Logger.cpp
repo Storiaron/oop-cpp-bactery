@@ -3,3 +3,6 @@
 //
 
 #include "Logger.h"
+void Logger::logResult(const std::vector<std::vector<Cell *>> petriDish)const {
+
+}

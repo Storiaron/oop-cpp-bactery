@@ -24,6 +24,8 @@ class Simulator {
   const Logger& logger;
   void setupSimulation();
   std::vector<Cell*> getEmptyCells();
+  void destroyDeadBacteria();
+  void handleSurvivors();
 };
 
 #endif //OOP_CPP_BACTERY__SIMULATOR_H_
