@@ -10,14 +10,9 @@ Model the life in the dish based on the following requirements:
 All the species have one constant (for their meaning read further):
 
 
-bacillus
-coccus
-spirillum
-NEARBY
-0.3 mm
-0.1 mm
-0.2 mm
-
+bacillus - 0.3 mm
+coccus - 0.1 mm
+spirillum - 0.2 mm
 
 All the bacteria have a position in the dish (x, y)
 Initialize the content of the dish with a large number of random instances (with coordinates less than 50 mm)
