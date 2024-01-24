@@ -6,6 +6,8 @@
 #define OOP_CPP_BACTERY__SIMULATOR_H_
 
 #include <vector>
+#include <cstdlib>
+#include <ctime>
 #include "Logger.h"
 #include "model/Cell.h"
 class Simulator {
@@ -21,6 +23,7 @@ class Simulator {
   std::vector<std::vector<Cell*>> petriDish;
   const Logger& logger;
   void setupSimulation();
+  std::vector<Cell*> getEmptyCells();
 };
 
 #endif //OOP_CPP_BACTERY__SIMULATOR_H_

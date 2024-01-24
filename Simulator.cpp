@@ -3,6 +3,9 @@
 //
 
 #include "Simulator.h"
+#include "model/Bacillus.h"
+#include "model/Coccus.h"
+#include "model/Spirillum.h"
 void Simulator::runSimulation() {
 
 }
@@ -15,4 +18,37 @@ void Simulator::setupSimulation() {
     }
     petriDish.push_back(row);
   }
+  for(int i = 0; i < bacteriaInstances; i++) {
+    std::vector<Cell*> emptyCells = getEmptyCells();
+    int position = rand() % emptyCells.size();
+    int bacteriaType = rand() % 3;
+    Cell* chosenCell = emptyCells.at(position);
+    switch(bacteriaType) {
+      case 0: {
+        Bacillus* bacillus = new Bacillus(chosenCell);
+        chosenCell->addBacterium(bacillus);
+      }
+      break;
+      case 1: {
+        Coccus* coccus = new Coccus(chosenCell);
+        chosenCell->addBacterium(coccus);
+      }
+      break;
+      case 2: {
+        Spirillum* spirillum = new Spirillum(chosenCell);
+        chosenCell->addBacterium(spirillum);
+      }
+    }
+  }
+}
+std::vector<Cell*> Simulator::getEmptyCells() {
+  std::vector<Cell*> emptyCells;
+  for(int i = 0; i < dishSize; i++) {
+    for(int j = 0; j < dishSize; j++) {
+      if (petriDish.at(i).at(j)->isEmpty) {
+        emptyCells.push_back(petriDish.at(i).at(j));
+      }
+    }
+  }
+  return emptyCells;
 }
