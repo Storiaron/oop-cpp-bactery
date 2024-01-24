@@ -13,9 +13,9 @@ class Bacterium {
   cell(cell),
   spreadingRadius(spreadingRadius)
   {};
-  virtual bool checkSurvival(const std::vector<const std::vector<const Cell *>> &environment) = 0;
+  virtual bool checkSurvival(const std::vector<std::vector<Cell *>> &environment) = 0;
  protected:
-  double spreadingRadius{0};
+  int spreadingRadius{0};
   Cell* cell{nullptr};
 };
 

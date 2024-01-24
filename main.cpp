@@ -4,7 +4,7 @@
 int main() {
   std::srand(time(0));
   Logger logger;
-  Simulator simulator(logger, 5, 10);
+  Simulator simulator(logger, 5, 5);
   simulator.runSimulation();
   return 0;
 }

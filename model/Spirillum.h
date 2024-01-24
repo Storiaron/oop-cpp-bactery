@@ -8,8 +8,8 @@
 #include "Bacterium.h"
 class Spirillum : public Bacterium {
  public:
-  Spirillum(Cell* cell) : Bacterium(cell, 0.2) {}
-  bool checkSurvival(const std::vector<const std::vector<const Cell *>> &environment) override;
+  Spirillum(Cell* cell) : Bacterium(cell, 2) {}
+  bool checkSurvival(const std::vector<std::vector<Cell *>> &environment) override;
 
 };
 
